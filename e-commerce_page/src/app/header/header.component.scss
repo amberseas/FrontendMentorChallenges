@@ -1,0 +1,77 @@
+@import "../shared/styles/variables.scss";
+
+.header {
+    width: 100%;
+    height: 11.4rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $light-gray;
+    position: relative;
+
+    .navigation {
+        height: 100%;
+
+        &__nav {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            height: 100%;
+            margin-left: 5rem;
+            cursor: pointer;
+        }
+        &__item {
+            display: flex;
+            align-items: center;
+            color: $grayish-blue;
+            border-bottom: 4px solid transparent;
+            transition: all .2s;
+
+            &:hover {
+                color: $very-dark-blue;
+                border-bottom: 4px solid $orange;
+            }
+        }
+    }
+
+    &__account {
+        position: absolute;
+        height: 100%;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 4.5rem;
+
+        .shopping-cart-box {
+            cursor: pointer;
+
+            svg path {
+                fill: $dark-grayish-blue; 
+                transition: all .2s;
+            }
+
+            &:hover svg path {
+                fill: $very-dark-blue;
+            }
+        }
+        
+
+        .user-box {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all .2s;
+            cursor: pointer;
+
+            &:hover {
+                border: 2px solid $orange;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+    
+}
