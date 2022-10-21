@@ -1,0 +1,23 @@
+@import "../../shared/styles/variables.scss";
+@import "../../shared/styles/mixins.scss";
+
+.shopping-cart {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+
+    &__title {
+        padding: 2rem;
+        border-bottom: 1px solid $light-gray;
+    }
+
+    &__items-container {
+        position: relative;
+        font-weight: 700;
+        color: $dark-grayish-blue
+    }
+
+    &__items {
+        @include absCenter;
+    }
+}

@@ -1,0 +1,9 @@
+<div class="shopping-cart">
+    <h3 class="shopping-cart__title">Cart</h3>
+    <div class="shopping-cart__items-container">
+        <div class="shopping-cart__items">
+            <div *ngIf="false; else emptyCart">Content to render when condition is true.</div>
+            <ng-template #emptyCart>Your cart is empty.</ng-template>
+        </div>
+    </div>
+</div>

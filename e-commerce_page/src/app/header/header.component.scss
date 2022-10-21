@@ -52,6 +52,27 @@
             &:hover svg path {
                 fill: $very-dark-blue;
             }
+
+            .shopping-cart-preview {
+                visibility: hidden;
+                opacity: 0;
+                height: 25rem;
+                width: 36rem;
+                overflow: hidden;
+                position: absolute;
+                top: 9rem;
+                right: -8rem;
+                background-color: $white;
+                border-radius: 1rem;
+                transition: all .5s;
+                box-shadow: rgba(0, 0, 0, 0.18) 0px 20px 35px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+                cursor: default;
+            }
+
+            &:hover .shopping-cart-preview {
+                visibility: visible;
+                opacity: 1;
+            }
         }
         
 
@@ -73,5 +94,5 @@
             }
         }
     }
-    
 }
+
