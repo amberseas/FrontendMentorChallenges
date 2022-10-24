@@ -1,0 +1,55 @@
+@import "../shared/styles/variables.scss";
+
+.row {
+    height: 78rem;
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+.col-1-of-2 {
+    width: 50%;
+    margin: 9rem 5rem;
+}
+
+.product {
+
+    &__photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 9rem);
+        grid-template-rows: 44.5rem 9rem;
+        gap: 3rem;
+        
+        img {
+            width: 100%;
+                    }
+    }
+
+    &__image-border {
+        overflow: hidden;
+    }
+
+    &__thumbnail {
+        cursor: pointer;  
+        position: relative;
+        border: 2px solid transparent;
+        border-radius: 1rem;
+
+        &:hover img{
+            filter: opacity(.4)
+        }
+    }
+
+    &__preview{
+        border-radius: 1.5rem;
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+}
+
+.active {
+    border: 2px solid $orange;
+
+    img {
+        filter: opacity(.4)
+    }
+}

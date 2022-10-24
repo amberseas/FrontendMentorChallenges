@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-1-of-2">
+        <div class="product__photo-gallery">
+            <div class="product__image-border product__preview">
+                <img src="../../assets/images/image-product-{{ image }}.jpg"
+                     alt="">
+            </div>
+            <div class="product__image-border product__thumbnail"
+                 [ngClass]="image === '1' ? 'active' : ''">
+                <img src="../../assets/images/image-product-1-thumbnail.jpg"
+                     alt=""
+                     (click)="onSelectImage('1')">
+            </div>
+            <div class="product__image-border product__thumbnail"
+                 [ngClass]="image === '2' ? 'active' : ''">
+                <img src="../../assets/images/image-product-2-thumbnail.jpg"
+                     alt=""
+                     (click)="onSelectImage('2')">
+            </div>
+            <div class="product__image-border product__thumbnail"
+                 [ngClass]="image === '3' ? 'active' : ''">
+                <img src="../../assets/images/image-product-3-thumbnail.jpg"
+                     alt=""
+                     (click)="onSelectImage('3')">
+            </div>
+            <div class="product__image-border product__thumbnail"
+                 [ngClass]="image === '4' ? 'active' : ''">
+                <img src="../../assets/images/image-product-4-thumbnail.jpg"
+                     alt=""
+                     (click)="onSelectImage('4')">
+            </div>
+        </div>
+    </div>
+    <div class="col-1-of-2"></div>
+</div>
