@@ -6,14 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit {
-  image: string = '1';
+  image: number = 0;
+  amount: number = 0;
+
+  product = {
+    company: "Sneaker company",
+    title: "Fall limited edition sneakers",
+    images: ['../../assets/images/image-product-1.jpg', 
+              '../../assets/images/image-product-2.jpg',
+              '../../assets/images/image-product-3.jpg',
+              '../../assets/images/image-product-4.jpg',
+            ],
+    discription: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    priceNow: '$125.00',
+    discount: '50%',
+    priceBefore: '$250.00'
+  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSelectImage(id: string) {
+  onSelectImage(id: number) {
     this.image = id;
   }
 

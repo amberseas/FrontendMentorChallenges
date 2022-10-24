@@ -4,11 +4,12 @@
     height: 78rem;
     max-width: 110rem;
     margin: 0 auto;
+    display: flex;
 }
 
 .col-1-of-2 {
     width: 50%;
-    margin: 9rem 5rem;
+    padding: 9rem 5rem;
 }
 
 .product {
@@ -43,6 +44,107 @@
         border-radius: 1.5rem;
         grid-column-start: 1;
         grid-column-end: 5;
+    }
+
+    &__company {
+        color: $orange;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 6rem;
+    }
+
+    &__title {
+        font-size: 4rem;
+        text-transform: capitalize;
+        color: $very-dark-blue;
+        margin-top: 1.5rem;
+    }
+
+    &__discription {
+        margin-top: 4rem;
+        color: $dark-grayish-blue;
+        line-height: 2.3rem;
+    }
+
+    &__price-now {
+        display: flex;
+        align-items: center;
+        margin-top: 3rem;
+        font-weight: 700;
+        font-size: 2.5rem;
+
+        span {
+            background-color: $pale-orange;
+            padding: .3rem 1rem;
+            margin-left: 1rem;
+            border-radius: .5rem;
+            color: $orange;
+        }
+    }
+
+    &__price-before {
+        margin-top: 1rem;
+        color: $grayish-blue;
+        font-weight: 700;
+        text-decoration: line-through;
+    }
+
+    &__actions {
+        margin-top: 4rem;
+        display: flex;
+        gap: 1.5rem;
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        .button-group {
+            width: 15.5rem;
+            height: 5.5rem;
+            display: flex;
+            background-color: $light-grayish-blue;
+            border-radius: 1rem;
+
+            button {
+                width: calc(100%/3);
+                font-weight: 700;
+                cursor: pointer;
+            }
+
+            .decrease, .increase {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+
+        .add-to-cart {
+            background-color: $orange;
+            border-radius: 1rem;
+            width: 27rem;
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0px 31px 36px -5px rgba(255,125,26,0.29);
+            -webkit-box-shadow: 0px 31px 36px -5px rgba(255,125,26,0.29);
+            -moz-box-shadow: 0px 31px 36px -5px rgba(255,125,26,0.29);
+            transition: all .2s;
+
+            svg path {
+                fill: $white;
+            }
+
+            &:hover {
+                opacity: .7;
+            }
+        }
     }
 }
 
