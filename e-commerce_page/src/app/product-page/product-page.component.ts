@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit {
-  image: number = 0;
+  imageIndex: number = 0;
   amount: number = 0;
+  isGalleryVisable = false;
 
   product = {
     company: "Sneaker company",
@@ -29,7 +30,19 @@ export class ProductPageComponent implements OnInit {
   }
 
   onSelectImage(id: number) {
-    this.image = id;
+    this.imageIndex = id;
+  }
+
+  onChangeImage(direction: string) {
+    if(direction === '-') {
+      this.imageIndex > 0 ? this.imageIndex-- : this.imageIndex = 3;
+    } else if (direction === '+') {
+      this.imageIndex < 3 ? this.imageIndex++ : this.imageIndex = 0;
+    }
+  }
+
+  toggleView() {
+    this.isGalleryVisable = !this.isGalleryVisable;
   }
 
 }
