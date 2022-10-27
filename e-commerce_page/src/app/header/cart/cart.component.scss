@@ -13,11 +13,70 @@
 
     &__items-container {
         position: relative;
-        font-weight: 700;
-        color: $dark-grayish-blue
+        color: $dark-grayish-blue;
+        padding: 2.5rem;
+        padding-bottom: 3rem;
+
+        .center {
+            font-weight: 700;
+            @include absCenter();
+        }
     }
 
     &__items {
-        @include absCenter;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            .image-box {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 5px;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .info-box {
+                width: 21rem;
+                .title {
+                    font-weight: 400;
+                    margin-bottom: .5rem;
+                }
+            }
+
+            .empty-cart {
+                cursor: pointer;
+
+                &:hover svg path {
+                    fill: $dark-grayish-blue
+                }
+            }
+        }
+
+        .checkout {
+            cursor: pointer;
+            border: none;
+            background-color: $orange;
+            color: $white;
+            height: 5.5rem;
+            width: 100%;
+            border-radius: 1rem;
+            transition: all .2s;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
     }
+
+   
 }

@@ -60,13 +60,46 @@
                       fill-rule="evenodd" />
             </svg>
         </button>
+        <button class="btn-close"
+                (click)="toggleView()">
+            <svg width="14"
+                 height="15"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                      fill="#69707D"
+                      fill-rule="evenodd" />
+            </svg></button>
     </div>
     <div class="col-1-of-2">
         <div class="product__photo-gallery">
-            <div class="product__image-border product__preview"
-                 (click)="toggleView()">
+            <div class="product__image-border product__preview">
                 <img src="{{ product.images[imageIndex] }}"
-                     alt="">
+                     alt=""
+                     (click)="toggleView()">
+                <button class="btn btn-previous btn-phone"
+                        (click)="onChangeImage('-')">
+                    <svg width="12"
+                         height="18"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1 3 9l8 8"
+                              stroke="#1D2026"
+                              stroke-width="3"
+                              fill="none"
+                              fill-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="btn btn-next btn-phone"
+                        (click)="onChangeImage('+')">
+                    <svg width="13"
+                         height="18"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="m2 1 8 8-8 8"
+                              stroke="#1D2026"
+                              stroke-width="3"
+                              fill="none"
+                              fill-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
             <div class="product__image-border product__thumbnail"
                  [ngClass]="imageIndex === 0 ? 'active' : ''"
@@ -103,16 +136,19 @@
             <h3 class="product__company">{{product.company}}</h3>
             <h2 class="product__title">{{product.title}}</h2>
             <p class="product__discription">{{product.discription}}</p>
-            <div class="product__price-now">
-                {{product.priceNow}}
-                <span>{{product.discount}}</span>
-            </div>
-            <div class="product__price-before">
-                {{product.priceBefore}}
+            <div class="product__price-container">
+                <div class="product__price-now">
+                    ${{product.priceNow}}
+                    <span>{{product.discount}}</span>
+                </div>
+                <div class="product__price-before">
+                    ${{product.priceBefore}}
+                </div>
             </div>
             <div class="product__actions">
                 <div class="button-group">
-                    <button class="decrease"><svg width="12"
+                    <button class="decrease"
+                            (click)="onChangeAmount('-')"><svg width="12"
                              height="4"
                              xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -124,8 +160,9 @@
                                  fill-rule="nonzero"
                                  xlink:href="#a" />
                         </svg></button>
-                    <button class="amount">{{amount}}</button>
-                    <button class="increase"><svg width="12"
+                    <button class="amount">{{ amount }}</button>
+                    <button class="increase"
+                            (click)="onChangeAmount('+')"><svg width="12"
                              height="12"
                              xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -138,7 +175,8 @@
                                  xlink:href="#b" />
                         </svg></button>
                 </div>
-                <button class="add-to-cart">
+                <button class="add-to-cart"
+                        (click)="onAddToCart()">
                     <svg width="22"
                          height="20"
                          xmlns="http://www.w3.org/2000/svg">

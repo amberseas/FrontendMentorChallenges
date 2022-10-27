@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product, ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-page',
@@ -9,22 +10,11 @@ export class ProductPageComponent implements OnInit {
   imageIndex: number = 0;
   amount: number = 0;
   isGalleryVisable = false;
+  product: Product;
 
-  product = {
-    company: "Sneaker company",
-    title: "Fall limited edition sneakers",
-    images: ['../../assets/images/image-product-1.jpg', 
-              '../../assets/images/image-product-2.jpg',
-              '../../assets/images/image-product-3.jpg',
-              '../../assets/images/image-product-4.jpg',
-            ],
-    discription: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-    priceNow: '$125.00',
-    discount: '50%',
-    priceBefore: '$250.00'
-  }
-
-  constructor() { }
+  constructor(private productService: ProductService) { 
+    this.product = this.productService.getProduct();
+   }
 
   ngOnInit(): void {
   }
@@ -43,6 +33,36 @@ export class ProductPageComponent implements OnInit {
 
   toggleView() {
     this.isGalleryVisable = !this.isGalleryVisable;
+  }
+
+  onChangeAmount(operation: string) {
+    if(this.amount === 0 && operation === '-') return;
+    if(operation === '-') {
+      this.amount--;
+    } else if (operation === '+') {
+      this.amount++;
+    }
+    this.productService.amount = this.amount;
+  }
+
+  onAddToCart() {
+    if(this.amount){
+      let index = null;
+      
+      this.productService.cart.filter((p, i) =>  {
+        if(p.title === this.product.title){
+          index = i
+        }
+      })
+
+      if(index !== null) {
+        this.productService.cart[index].amount += this.amount;
+      } else {
+        this.productService.cart.push({...this.product, amount: this.amount})
+      }
+
+      this.productService.cartChanged.next(this.productService.cart)
+    }
   }
 
 }
