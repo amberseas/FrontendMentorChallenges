@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Product, ProductService } from '../product.service';
+import { Component } from '@angular/core';
+import { Product, ProductService } from './product.service';
 
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss']
 })
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent {
   imageIndex: number = 0;
   amount: number = 0;
   isGalleryVisable = false;
@@ -15,9 +15,6 @@ export class ProductPageComponent implements OnInit {
   constructor(private productService: ProductService) { 
     this.product = this.productService.getProduct();
    }
-
-  ngOnInit(): void {
-  }
 
   onSelectImage(id: number) {
     this.imageIndex = id;
@@ -51,17 +48,17 @@ export class ProductPageComponent implements OnInit {
       
       this.productService.cart.filter((p, i) =>  {
         if(p.title === this.product.title){
-          index = i
+          index = i;
         }
       })
 
       if(index !== null) {
         this.productService.cart[index].amount += this.amount;
       } else {
-        this.productService.cart.push({...this.product, amount: this.amount})
+        this.productService.cart.push({...this.product, amount: this.amount});
       }
 
-      this.productService.cartChanged.next(this.productService.cart)
+      this.productService.cartChanged.next(this.productService.cart);
     }
   }
 

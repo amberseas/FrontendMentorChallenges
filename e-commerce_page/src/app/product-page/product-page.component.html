@@ -6,34 +6,34 @@
          [ngClass]="isGalleryVisable ? '' : 'hide-gallery'">
         <div class="product__image-border product__preview">
             <img src="{{ product.images[imageIndex] }}"
-                 alt="">
+                 alt="product-preview">
         </div>
         <div class="product__image-border product__thumbnail"
              [ngClass]="imageIndex === 0 ? 'active' : ''"
              (click)="onSelectImage(0)">
             <img src="../../assets/images/image-product-1-thumbnail.jpg"
-                 alt="">
+                 alt="product-1">
             <div class="overlay"></div>
         </div>
         <div class="product__image-border product__thumbnail"
              [ngClass]="imageIndex === 1 ? 'active' : ''"
              (click)="onSelectImage(1)">
             <img src="../../assets/images/image-product-2-thumbnail.jpg"
-                 alt="">
+                 alt="product-2">
             <div class="overlay"></div>
         </div>
         <div class="product__image-border product__thumbnail"
              [ngClass]="imageIndex === 2 ? 'active' : ''"
              (click)="onSelectImage(2)">
             <img src="../../assets/images/image-product-3-thumbnail.jpg"
-                 alt="">
+                 alt="product-3">
             <div class="overlay"></div>
         </div>
         <div class="product__image-border product__thumbnail"
              [ngClass]="imageIndex === 3 ? 'active' : ''"
              (click)="onSelectImage(3)">
             <img src="../../assets/images/image-product-4-thumbnail.jpg"
-                 alt="">
+                 alt="product-4">
             <div class="overlay"></div>
         </div>
         <button class="btn btn-previous"
@@ -74,7 +74,7 @@
         <div class="product__photo-gallery">
             <div class="product__image-border product__preview">
                 <img src="{{ product.images[imageIndex] }}"
-                     alt=""
+                     alt="product-preview"
                      (click)="toggleView()">
                 <button class="btn btn-previous btn-phone"
                         (click)="onChangeImage('-')">
@@ -105,28 +105,28 @@
                  [ngClass]="imageIndex === 0 ? 'active' : ''"
                  (click)="onSelectImage(0)">
                 <img src="../../assets/images/image-product-1-thumbnail.jpg"
-                     alt="">
+                     alt="product-1">
                 <div class="overlay"></div>
             </div>
             <div class="product__image-border product__thumbnail"
                  [ngClass]="imageIndex === 1 ? 'active' : ''"
                  (click)="onSelectImage(1)">
                 <img src="../../assets/images/image-product-2-thumbnail.jpg"
-                     alt="">
+                     alt="product-2">
                 <div class="overlay"></div>
             </div>
             <div class="product__image-border product__thumbnail"
                  [ngClass]="imageIndex === 2 ? 'active' : ''"
                  (click)="onSelectImage(2)">
                 <img src="../../assets/images/image-product-3-thumbnail.jpg"
-                     alt="">
+                     alt="product-3">
                 <div class="overlay"></div>
             </div>
             <div class="product__image-border product__thumbnail"
                  [ngClass]="imageIndex === 3 ? 'active' : ''"
                  (click)="onSelectImage(3)">
                 <img src="../../assets/images/image-product-4-thumbnail.jpg"
-                     alt="">
+                     alt="product-4">
                 <div class="overlay"></div>
             </div>
         </div>
