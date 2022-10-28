@@ -20,6 +20,10 @@
     padding: 9rem 5rem;
     position: relative;
 
+    @include respond(tab-land){
+        padding: 9rem 1rem;
+    }
+
     @include respond(tab-port) {
         width: 100%;
         padding: 0;
@@ -46,6 +50,12 @@
         grid-template-columns: repeat(4, 9rem);
         grid-template-rows: 44.5rem 9rem;
         gap: 3rem;
+
+        @include respond(tab-land){
+            justify-content: end;
+            grid-template-rows: 35rem 9rem;
+            gap: 2rem;
+        }
 
         @include respond(tab-port) {
             display: block;
@@ -137,7 +147,7 @@
         color: $orange;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-top: 6rem;
+        margin-top: 1rem;
 
         @include respond(tab-port){
             margin-top: 0;
@@ -150,7 +160,7 @@
         color: $very-dark-blue;
         margin-top: 1.5rem;
 
-        @include respond(tab-port){
+        @include respond(tab-land) {
             font-size: 3rem;
         }
     }
@@ -160,7 +170,7 @@
         color: $dark-grayish-blue;
         line-height: 2.3rem;
 
-        @include respond(tab-port){
+        @include respond(tab-land){
             margin-top: 2.5rem;
         }
     }

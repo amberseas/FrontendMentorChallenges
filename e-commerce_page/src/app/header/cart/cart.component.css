@@ -1,0 +1,76 @@
+/*
+0 - 600px:          Phone
+600px - 900px:      Tablet portrait
+900px - 1200px:     Tablet landscape
+[1200 - 1800]       is where our normal styles apply
+1800px + :          Large desktop
+*/
+.shopping-cart {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+.shopping-cart__title {
+  padding: 2rem;
+  border-bottom: 1px solid hsl(0deg, 0%, 90%);
+}
+.shopping-cart__items-container {
+  position: relative;
+  color: hsl(219deg, 9%, 45%);
+  padding: 2.5rem;
+  padding-bottom: 3rem;
+}
+.shopping-cart__items-container .center {
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.shopping-cart__items {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.shopping-cart__items .item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.shopping-cart__items .item .image-box {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.shopping-cart__items .item .image-box img {
+  height: 100%;
+}
+.shopping-cart__items .item .info-box {
+  width: 21rem;
+}
+.shopping-cart__items .item .info-box .title {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.shopping-cart__items .item .empty-cart {
+  cursor: pointer;
+}
+.shopping-cart__items .item .empty-cart:hover svg path {
+  fill: hsl(219deg, 9%, 45%);
+}
+.shopping-cart__items .checkout {
+  cursor: pointer;
+  border: none;
+  background-color: hsl(26deg, 100%, 55%);
+  color: hsl(0deg, 0%, 100%);
+  height: 5.5rem;
+  width: 100%;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+.shopping-cart__items .checkout:hover {
+  opacity: 0.7;
+}/*# sourceMappingURL=cart.component.css.map */
