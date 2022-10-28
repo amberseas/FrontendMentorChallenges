@@ -30,9 +30,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](Screenshot-desktop.png)
-![](Screenshot-tablet.png)
-![](Screenshot-phone.png)
+![](./task-info/Screenshot-desktop.png)
+![](./task-info/Screenshot-tablet.png)
+![](./task-info/Screenshot-phone.png)
 
 ### Links
 
