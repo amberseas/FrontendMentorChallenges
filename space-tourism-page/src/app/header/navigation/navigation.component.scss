@@ -1,0 +1,108 @@
+@import '../../shared/variables.scss';
+
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+
+    &__background {
+        height: 100vh;
+        width: 25.4rem;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(40.7742px);
+        position: fixed;
+        right: -30rem;
+        top: 0;
+        z-index: 500;
+        transition: all .2s ;
+    }
+
+    &__button {
+        position: fixed;
+        width: 2rem;
+        height: 2rem;
+        right: 2.4rem;
+        z-index: 2000;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+        &--close {
+            display: none;
+        }
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        opacity: 0;
+        width: 25.4rem;
+        visibility: hidden;
+        padding-top: 11.8rem;
+
+        transition: opacity .3s ease-in-out;
+    }
+
+    &__list {
+        padding-left: 3.2rem;
+        list-style: none;
+        width: 100%;
+    }
+
+    &__item {
+        margin-bottom: 3.2rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            font-size: 1.6rem;
+            line-height: 1.92rem;
+            letter-spacing: 2.7px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: $barlow-condensed;
+            padding-bottom: 1rem;
+        }
+
+        span {
+            margin-right: 1.1rem;
+            display: inline-block;
+        }
+
+        &:hover {
+            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &:active {
+            border-bottom: 3px solid rgba(255, 255, 255);
+        }
+    }
+
+    &__checkbox:checked~&__background {
+            right: 0;
+    }
+    
+    &__checkbox:checked~&__nav {
+            opacity: 1;
+            visibility: visible;
+    }
+
+    &__button:hover {
+        .navigation__button--open {
+            transform: scale(1.05);
+        }
+    }
+
+    &__checkbox:checked+&__button &__button--open {
+        display: none;
+    }
+
+    &__checkbox:checked+&__button &__button--close {
+        display: block;
+    }
+}
