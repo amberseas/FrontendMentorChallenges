@@ -1,0 +1,27 @@
+@mixin centerX() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin absCenter() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == tablet {
+        @media only screen and (min-width: 43.75em) {@content};     //width <=900px
+    }
+
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 75em) {@content};        //width <=1200px
+    }
+
+    // @if $breakpoint == big-desktop {
+    //     @media only screen and (min-width: 112.5em) {@content};     //width >=1800px
+    // }
+}

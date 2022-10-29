@@ -1,0 +1,121 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../assets/home/background-home-mobile.jpg);
+    background-size:cover;
+    background-position: bottom;
+    padding: 2.4rem;
+    text-align: center;
+    position: relative;
+
+    @include respond(tablet) {
+        background-image: url(../../../assets/home/background-home-tablet.jpg);
+        padding: 15.9rem;
+    }
+
+    @include respond(desktop) {
+        background-image: url(../../../assets/home/background-home-desktop.jpg);
+        padding: 16.5rem;
+        text-align: left;
+    }
+
+    &__container {
+        margin-top: calc(11.2rem - 2.4rem);
+
+        @include respond(tablet) {
+            margin-top: calc(20.2rem - 15.9rem); 
+        }
+
+        @include respond(desktop) {
+            width: 45rem;
+            position: absolute;
+            left: 11%;
+            top: 38.7rem;
+            margin: 0;
+        }
+    }
+
+    &__heading {
+        margin: 1.6rem auto;
+    }
+
+    &__btn-wrapper {
+        position: relative;
+        @include centerX();
+        bottom: 4.8rem;
+
+        @include respond(tablet) {
+            bottom: 9rem;
+        }
+
+        @include respond(desktop) {
+            bottom: 13.1rem;
+            left: calc(100% - 27.4rem - 11.5%);
+            transform: translateX(0);
+        }
+
+        .btn {
+            &,
+            &:link, 
+            &:visited {
+                cursor: pointer;
+                width: 15rem;
+                height: 15rem;
+                border-radius: 50%;
+                background-color: $white;
+                text-transform: uppercase;
+                font-family: $bellefair;
+                font-size: 2rem;
+                color: $dark-blue;
+                letter-spacing: 1.25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: all .2s;
+
+                @include respond(tablet) {
+                    width: 24.2rem;
+                    height: 24.2rem;
+                    font-size: 3.2rem;
+                    letter-spacing: 2px;
+                }
+
+                @include respond(desktop) {
+                    width: 27.4rem;
+                    height: 27.4rem;
+                }
+            }
+
+            &:active,
+            &:focus {
+                outline: none;
+                transform: scale(0.99);
+             }
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                background-color: $white;
+                opacity: 0;
+                z-index: -1;
+                transition: all .4s;
+            }
+
+            &:hover{
+                &::after {
+                    opacity: 0.1;
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}
