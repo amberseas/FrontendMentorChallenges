@@ -1,27 +1,17 @@
 @import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
 
 .navigation {
     &__checkbox {
         display: none;
     }
 
-    &__background {
-        height: 100vh;
-        width: 25.4rem;
-        background: rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(40.7742px);
-        position: fixed;
-        right: -30rem;
-        top: 0;
-        z-index: 500;
-        transition: all .2s ;
-    }
-
     &__button {
-        position: fixed;
-        width: 2rem;
-        height: 2rem;
-        right: 2.4rem;
+        position: absolute;
+        width: 2.4rem;
+        height: 2.1rem;
+        top: 0.9rem;
+        right: 0rem;
         z-index: 2000;
         cursor: pointer;
 
@@ -31,30 +21,81 @@
         &--close {
             display: none;
         }
+
+        @include respond(tablet) {
+            display: none;
+        }
     }
 
     &__nav {
         height: 100vh;
+        width: 25.4rem;
         position: fixed;
         top: 0;
         right: 0;
+        padding-top: 11.8rem;
         z-index: 1000;
         opacity: 0;
-        width: 25.4rem;
         visibility: hidden;
-        padding-top: 11.8rem;
-
+        background: rgba(255, 255, 255, 0.04);
+        -webkit-backdrop-filter: blur(40.7742px);
+        backdrop-filter: blur(40.7742px);
         transition: opacity .3s ease-in-out;
+
+        @include respond(tablet) {
+            visibility: visible;
+            opacity: 1;
+            width: 45rem;
+            height: 9.6rem;
+            padding: 0;
+            padding-left: 4.8rem;
+        }
+
+        @include respond(desktop) {
+            position: absolute;
+            width: 83rem;
+            height: 9.6rem;
+            padding-left: 12.3rem;
+        }
     }
 
     &__list {
         padding-left: 3.2rem;
         list-style: none;
-        width: 100%;
+        width: max-content;
+
+        @include respond(tablet) {
+            display: flex;
+            gap: 3.7rem;
+            padding: 0;
+            padding-top: 3.9rem;
+            height: 100%;
+        }
+
+        @include respond(desktop) {
+            gap: 4.8rem;
+        }
     }
 
     &__item {
         margin-bottom: 3.2rem;
+
+        @include respond(tablet) {
+            height: 100%;
+            margin: 0;
+        }
+
+        &:hover {
+            @include respond(tablet){
+                border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        &:active {
+            @include respond(tablet){
+                border-bottom: 3px solid rgba(255, 255, 255);
+            }
+        } 
     }
 
     &__link {
@@ -67,19 +108,50 @@
             text-transform: uppercase;
             font-family: $barlow-condensed;
             padding-bottom: 1rem;
+
+            @include respond(tablet) {
+               padding: 0;
+               height: 100%;
+               font-size: 1.4rem;
+               line-height: 1.68rem;
+               letter-spacing: 2.36px;
+            }
+
+            @include respond(desktop) {
+                font-size: 1.6rem;
+                line-height: 1.92rem;
+                letter-spacing: 2.7px;
+             }
         }
 
         span {
             margin-right: 1.1rem;
             display: inline-block;
+
+            @include respond(tablet) {
+                display: none;
+            }
+
+            @include respond(desktop) {
+                display: inline-block;
+                font-weight: 700;
+             }
         }
 
         &:hover {
             border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+
+            @include respond(tablet) {
+                border: none;
+            }
         }
 
         &:active {
             border-bottom: 3px solid rgba(255, 255, 255);
+
+            @include respond(tablet) {
+                border: none;
+            }
         }
     }
 
