@@ -3,7 +3,7 @@
 
 .destination {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../../assets/destination/background-destination-mobile.jpg);
     background-size: cover;
 
@@ -16,37 +16,45 @@
     }
 
     &__container {
+        max-width: 150rem;
+        margin: 0 auto;
         height: 100%;
-        padding: 8.8rem 2.4rem;
+        padding: 0 2.4rem 5.8rem;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         @include respond(tablet) {
-            padding: 13.6rem 3.85rem;
+            padding: 0 3.85rem 6.2rem;
         }
 
         @include respond(desktop) {
-            padding: 21.2rem 16.3rem 0 16.6rem;
+            padding: 0 16.3rem 11.8rem 16.6rem;
             flex-direction: row;
-            justify-content: space-between;
             align-items: flex-start;
+            justify-content: flex-end;
         }
     }
 
     &__heading-5 {
+        width: 100%;
+        padding-top: 8.8rem;
+        text-align: center;
         margin-bottom: 3.2rem;
 
         @include respond(tablet) {
-            align-self: flex-start;
+            text-align: left;
+            padding: 13.6rem 3.85rem 0;
             margin-bottom: 6rem;
         }
 
         @include respond(desktop) {
-            margin-bottom: 9.7rem;
+            padding: 21.2rem 16.65rem 0;
+            margin-bottom: 6.4rem;
         }
 
         span {
+            margin-right: 1rem;
             font-weight: 700;
             opacity: 0.25;
         }
@@ -55,6 +63,7 @@
     &__image-box {
         width: 17rem;
         height: 17rem;
+        margin-bottom: 2.6rem;
        
         @include respond(tablet) {
             width: 30rem;
@@ -64,7 +73,8 @@
         @include respond(desktop) {
             width: 44.5rem;
             height: 44.5rem;
-            margin-left: 6.35rem;
+            margin: 0;
+            align-self: flex-end;
         }
 
         img {
@@ -84,20 +94,11 @@
         @include respond(desktop) {
             width: 44.5rem;
             align-items: flex-start;
-            padding-top: 9.8rem;
+            margin-left: 15.7rem;
         }
     }
 
     &__nav {
-        margin-top: 2.6rem;
-
-        @include respond(tablet) {
-            margin-top: 5.3rem;
-        }
-
-        @include respond(tablet) {
-            margin-top: 0;
-        }
 
         &-list {
             list-style: none;
@@ -159,7 +160,7 @@
             justify-content: space-evenly;
         }
 
-        @include respond(tablet) {
+        @include respond(desktop) {
             justify-content: flex-start;
             gap: 7.9rem;
             text-align: left;
@@ -169,6 +170,10 @@
 
         &--distance {
             margin-bottom: 3.2rem;
+
+            @include respond(tablet) {
+                margin-bottom: 0;
+            }
         }
     }
 

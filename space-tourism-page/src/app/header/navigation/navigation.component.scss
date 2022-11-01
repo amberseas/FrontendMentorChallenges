@@ -78,7 +78,9 @@
     }
 
     &__item {
-        margin-bottom: 3.2rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2.2rem;
+        border-bottom: 3px solid transparent;
 
         @include respond(tablet) {
             height: 100%;
@@ -86,15 +88,13 @@
         }
 
         &:hover {
-            @include respond(tablet){
-                border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-            }
+            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+           
         }
 
         &:active {
-            @include respond(tablet){
-                border-bottom: 3px solid rgba(255, 255, 255);
-            }
+            border-bottom: 3px solid rgba(255, 255, 255);
+          
         } 
     }
 
@@ -135,22 +135,6 @@
                 display: inline-block;
                 font-weight: 700;
              }
-        }
-
-        &:hover {
-            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-
-            @include respond(tablet) {
-                border: none;
-            }
-        }
-
-        &:active {
-            border-bottom: 3px solid rgba(255, 255, 255);
-
-            @include respond(tablet) {
-                border: none;
-            }
         }
     }
 
