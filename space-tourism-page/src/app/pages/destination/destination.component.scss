@@ -1,0 +1,183 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.destination {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../assets/destination/background-destination-mobile.jpg);
+    background-size: cover;
+
+    @include respond(tablet) {
+        background-image: url(../../../assets/destination/background-destination-tablet.jpg);
+    }
+
+    @include respond(desktop) {
+        background-image: url(../../../assets/destination/background-destination-desktop.jpg);
+    }
+
+    &__container {
+        height: 100%;
+        padding: 8.8rem 2.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include respond(tablet) {
+            padding: 13.6rem 3.85rem;
+        }
+
+        @include respond(desktop) {
+            padding: 21.2rem 16.3rem 0 16.6rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__heading-5 {
+        margin-bottom: 3.2rem;
+
+        @include respond(tablet) {
+            align-self: flex-start;
+            margin-bottom: 6rem;
+        }
+
+        @include respond(desktop) {
+            margin-bottom: 9.7rem;
+        }
+
+        span {
+            font-weight: 700;
+            opacity: 0.25;
+        }
+    }
+
+    &__image-box {
+        width: 17rem;
+        height: 17rem;
+       
+        @include respond(tablet) {
+            width: 30rem;
+            height: 30rem;
+        }
+
+        @include respond(desktop) {
+            width: 44.5rem;
+            height: 44.5rem;
+            margin-left: 6.35rem;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include respond(tablet) {
+           width: 57.3rem;
+        }
+
+        @include respond(desktop) {
+            width: 44.5rem;
+            align-items: flex-start;
+            padding-top: 9.8rem;
+        }
+    }
+
+    &__nav {
+        margin-top: 2.6rem;
+
+        @include respond(tablet) {
+            margin-top: 5.3rem;
+        }
+
+        @include respond(tablet) {
+            margin-top: 0;
+        }
+
+        &-list {
+            list-style: none;
+            display: flex;
+            gap: 2.6rem;
+            margin-bottom: 3.1rem;
+
+            @include respond(tablet) {
+                margin-bottom: 4.7rem;
+            }
+
+            @include respond(desktop) {
+                margin-bottom: 5.2rem;
+            }
+        }
+
+        &__item {
+           
+        }
+
+        &-link {
+            cursor: pointer;
+            text-decoration: none;
+            padding-bottom: 0.8rem;
+
+            &:hover {
+                border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+            }
+
+            &:active, .active {
+                color: $white;
+                border-bottom: 3px solid $white; 
+            }
+        }
+    }
+
+    &__description {
+        text-align: center;
+
+        @include respond(tablet) {
+            margin-top: .8rem;
+        }
+
+        @include respond(desktop) {
+            text-align: left;
+            margin-top: 1.4rem;
+        }
+    }
+
+    &__stats-container {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid $grey;
+        padding-top: 3.2rem;
+        margin-top: 3.2rem;
+
+        @include respond(tablet) {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        @include respond(tablet) {
+            justify-content: flex-start;
+            gap: 7.9rem;
+            text-align: left;
+            margin-top: 5.4rem;
+            padding-top: 2.8rem;
+        }
+
+        &--distance {
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    &__subheading-2 {
+        margin-bottom: 1.2rem;
+    }
+}
+
+.active {
+    color: $white;
+    border-bottom: 3px solid $white; 
+}

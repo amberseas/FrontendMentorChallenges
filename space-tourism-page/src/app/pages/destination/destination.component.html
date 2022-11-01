@@ -1,0 +1,47 @@
+<section class="destination">
+    <div class="destination__container">
+        <div class="destination__flex-container">
+            <h5 class="destination__heading-5 heading-5">
+                <span>01</span>
+                Pick your destination
+            </h5>
+            <div class="destination__image-box">
+                <img src="{{planet.images.png}}"
+                     alt="">
+            </div>
+        </div>
+
+        <div class="destination__info-container">
+            <nav class="destination__nav">
+                <ul class="destination__nav-list">
+                    <li class="destination__nav-item"><a class="destination__nav-link nav-text"
+                           (click)="onSelectDestination(0)"
+                           [ngClass]="this.index === 0 ? 'active' : ''">moon</a></li>
+                    <li class="destination__nav-item"><a class="destination__nav-link nav-text"
+                           (click)="onSelectDestination(1)"
+                           [ngClass]="this.index === 1 ? 'active' : ''">mars</a></li>
+                    <li class="destination__nav-item"><a class="destination__nav-link nav-text"
+                           (click)="onSelectDestination(2)"
+                           [ngClass]="this.index === 2 ? 'active' : ''">europa</a></li>
+                    <li class="destination__nav-item"><a class="destination__nav-link nav-text"
+                           (click)="onSelectDestination(3)"
+                           [ngClass]="this.index === 3 ? 'active' : ''">titan</a></li>
+                </ul>
+            </nav>
+
+            <h2 class="destination__heading heading-2">{{planet.name}}</h2>
+            <p class="destination__description body-text">{{planet.description}}</p>
+
+            <div class="destination__stats-container">
+                <div class="destination__stats-container--distance">
+                    <h6 class="destination__subheading-2 subheading-2">Avg. distance</h6>
+                    <h6 class="destination__subheading-1 subheading-1">{{planet.distance}}</h6>
+                </div>
+                <div class="destination__stats-container--time">
+                    <h6 class="destination__subheading-2 subheading-2">Est. travel time</h6>
+                    <h6 class="destination__subheading-1 subheading-1">{{planet.travel}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
