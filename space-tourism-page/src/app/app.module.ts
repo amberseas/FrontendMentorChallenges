@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './header/navigation/navigation.component';
 import { DestinationComponent } from './pages/destination/destination.component';
 import { CrewComponent } from './pages/crew/crew.component';
+import { TechnologyComponent } from './pages/technology/technology.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CrewComponent } from './pages/crew/crew.component';
     NavigationComponent,
     DestinationComponent,
     CrewComponent,
+    TechnologyComponent,
   ],
   imports: [
     BrowserModule,

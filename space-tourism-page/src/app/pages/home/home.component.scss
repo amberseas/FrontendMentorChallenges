@@ -22,7 +22,7 @@
         text-align: left;
     }
 
-    &__container {
+    &__info-container {
         margin-top: calc(11.2rem - 2.4rem);
 
         @include respond(tablet) {

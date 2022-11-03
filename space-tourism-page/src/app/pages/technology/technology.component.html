@@ -1,0 +1,45 @@
+<section class="technology">
+    <h5 class="technology__heading heading-5">
+        <span>02</span>
+        Meet your crew
+    </h5>
+
+    <div class="technology__container">
+        <div class="technology__image-box">
+            <picture>
+                <source media="(min-width: 1200px)"
+                        srcset="{{technology.images.portrait}}">
+                <img src="{{technology.images.landscape}}"
+                     alt="{{technology.name}}">
+            </picture>
+        </div>
+
+        <div class="technology__btn-group">
+            <input type="radio"
+                   name="technology"
+                   id="vehicle"
+                   checked>
+            <label class="heading-4"
+                   for="vehicle"
+                   (click)="onSelectTechnology(0)">1</label>
+            <input type="radio"
+                   name="technology"
+                   id="spaceport">
+            <label class="heading-4"
+                   for="spaceport"
+                   (click)="onSelectTechnology(1)">2</label>
+            <input type="radio"
+                   name="technology"
+                   id="capsule">
+            <label class="heading-4"
+                   for="capsule"
+                   (click)="onSelectTechnology(2)">3</label>
+        </div>
+
+        <div class="technology__info-container">
+            <h6 class="technology__subheading nav-text">The terminology ...</h6>
+            <h3 class="technology__heading-3 heading-3">{{technology.name}}</h3>
+            <p class="technology__description body-text">{{ technology.description}}</p>
+        </div>
+    </div>
+</section>
