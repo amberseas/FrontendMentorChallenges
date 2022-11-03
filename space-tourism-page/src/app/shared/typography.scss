@@ -6,6 +6,7 @@
     font-size: 8rem;
     font-weight: 400;
     line-height: 10rem;
+    text-transform: uppercase;
 
     @include respond(tablet) {
         font-size: 15rem;
@@ -22,6 +23,7 @@
     font-size: 5.6rem;
     line-height: 6.418rem;
     color: $white;
+    text-transform: uppercase;
 
     @include respond(tablet) {
         font-size: 8rem;
@@ -34,13 +36,49 @@
     }
 }
 
+.heading-3 {
+    font-family: $bellefair;
+    font-size: 2.4rem;
+    line-height: 2.75rem;
+    color: $white;
+    text-transform: uppercase;
+
+    @include respond(tablet) {
+        font-size: 4rem;
+        line-height: 4.584rem;
+    }
+
+    @include respond(desktop) {
+        font-size: 5.6rem;
+        line-height: 6.418rem;
+    }
+}
+
+.heading-4 {
+    font-family: $bellefair;
+    font-size: 1.6rem;
+    line-height: 1.834rem;
+    color: $white;
+    text-transform: uppercase;
+
+    @include respond(tablet) {
+        font-size: 2.4rem;
+        line-height: 2.75rem;
+    }
+
+    @include respond(desktop) {
+        font-size: 3.2rem;
+        line-height: 3.667rem;
+    }
+}
+
 .heading-5 {
     font-family: $barlow-condensed;
     font-size: 1.6rem;
     font-weight: 400;
-    color: $lavender;
     line-height: 1.92rem;
     letter-spacing: 2.7px;
+    text-transform: uppercase;
 
     @include respond(tablet) {
         font-size: 2rem;

@@ -1,0 +1,50 @@
+<section class="section-crew crew">
+       <h5 class="crew__heading heading-5">
+              <span>02</span>
+              Meet your crew
+       </h5>
+
+       <div class="container">
+              <div class="crew__image-box">
+                     <img src="{{crewMember.images.png}}"
+                          alt="">
+              </div>
+
+              <div class="crew__member"
+                   [ngClass]="{
+                   'commander': index===0, 
+                   'specialist': index===1, 
+                   'pilot': index===2, 
+                   'engineer': index===3}">
+                     <div class="crew__radio-group">
+                            <input type="radio"
+                                   name="crew-member"
+                                   id="commander"
+                                   checked>
+                            <label for="commander"
+                                   (click)="onSelectMember(0)"></label>
+                            <input type="radio"
+                                   name="crew-member"
+                                   id="specialist">
+                            <label for="specialist"
+                                   (click)="onSelectMember(1)"></label>
+                            <input type="radio"
+                                   name="crew-member"
+                                   id="pilot">
+                            <label for="pilot"
+                                   (click)="onSelectMember(2)"></label>
+                            <input type="radio"
+                                   name="crew-member"
+                                   id="engineer">
+                            <label for="engineer"
+                                   (click)="onSelectMember(3)"></label>
+                     </div>
+                     <div class="wrapper">
+                            <h4 class="crew__member--role heading-4">{{crewMember.role}}</h4>
+                            <h3 class="crew__member--name heading-3">{{crewMember.name}}</h3>
+                            <p class="crew__member--bio body-text">{{crewMember.bio}}</p>
+                     </div>
+              </div>
+       </div>
+
+</section>
