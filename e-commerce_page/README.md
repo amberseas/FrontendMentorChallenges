@@ -57,8 +57,6 @@ Users should be able to:
 This project helped me practice building Angular app, using services for communication between components. It took me around 10h of non-intence work.
 I also learned how to change colors of svg icons.
 
-To see how you can add code snippets, see below:
-
 ```css
 .empty-cart {
   cursor: pointer;
