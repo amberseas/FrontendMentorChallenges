@@ -1,27 +1,66 @@
-# SpaceTourismPage
+# Frontend Mentor - Space tourism website solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Overview
 
-## Build
+### The challenge
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Users should be able to:
 
-## Running unit tests
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Screenshot
 
-## Running end-to-end tests
+![](./src/assets/screenshots/Screenshot%202022-11-04%20at%2015-05-20%20Frontend%20Mentor%20Space%20tourism%20website.png)
+![](./src/assets/screenshots/Screenshot%202022-11-04%20at%2015-05-44%20Frontend%20Mentor%20Space%20tourism%20website.png)
+![](./src/assets/screenshots/Screenshot%202022-11-04%20at%2015-06-15%20Frontend%20Mentor%20Space%20tourism%20website.png)
+![](./src/assets/screenshots/Screenshot%202022-11-04%20at%2015-07-25%20Frontend%20Mentor%20Space%20tourism%20website.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Links
 
-## Further help
+- Solution URL: [Github](https://github.com/amberseas/FrontendMentorChallenges/tree/space-tourism)
+- Live Site URL: [Netlify](https://amberseas-space-tourism.netlify.app)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- Sass
+- Flexbox
+- Mobile-first workflow
+- Angular - development platform
+- Angular Routing
+- TypeScript
+- ESLint with rules AirBnB
+
+### What I learned
+
+I had a lot of practice with Sass making everything responsive depending on device size. I also had a chance to use Angular routing :)
+
+### Continued development
+
+I want to practice more on apps logic.
+
+## Author
+
+- Website - [Gintarė Šimkūnienė](https://amberseas.netlify.app)
+- Frontend Mentor - [@amberseas](https://www.frontendmentor.io/profile/amberseas)
+- LinkedIn - [Gintarė Šimkūnienė](https://www.linkedin.com/in/gintar%C4%97-%C5%A1imk%C5%ABnien%C4%97/)
+

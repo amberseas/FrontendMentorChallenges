@@ -6,8 +6,14 @@
     <div class="destination__container">
 
         <div class="destination__image-box">
-            <img src="{{planet.images.png}}"
-                 alt="">
+            <picture>
+                <source type="webp"
+                        src="{{planet.images.webp}}">
+                <source type="png"
+                        src="{{planet.images.png}}">
+                <img src="{{planet.images.png}}"
+                     alt="{{planet.name}}">
+            </picture>
         </div>
 
         <div class="destination__info-container">
