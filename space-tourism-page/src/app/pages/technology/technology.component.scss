@@ -5,16 +5,16 @@
     min-height: 100vh;
     background-image: url(../../../assets/technology/background-technology-mobile.jpg);
     background-size: cover;
-    padding-top: 8.8rem;
+    padding-top: $pad-top-small;
 
     @include respond(tablet) {
         background-image: url(../../../assets/technology/background-technology-tablet.jpg);
-        padding-top: 13.6rem;
+        padding-top: $pad-top-med;
     }
 
     @include respond(desktop) {
         background-image: url(../../../assets/technology/background-technology-desktop.jpg);
-        padding-top: 21.2rem;
+        padding-top: $pad-top-large;
         padding-left: 16.65rem;
     }
 
@@ -55,8 +55,6 @@
             width: 51.5rem;
             align-self: center;
         }
-
-
     }
 
     &__btn-group {
@@ -85,10 +83,15 @@
             height: 4rem;
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all .2s;
 
             display: flex;
             justify-content: center;
             align-items: center;
+
+            &:hover {
+                border: 1px solid rgba(255, 255, 255);
+            }
 
             @include respond(tablet) {
                 width: 6rem;

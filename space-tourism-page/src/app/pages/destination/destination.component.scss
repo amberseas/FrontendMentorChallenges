@@ -38,18 +38,18 @@
 
     &__heading-5 {
         width: 100%;
-        padding-top: 8.8rem;
+        padding-top: $pad-top-small;
         text-align: center;
         margin-bottom: 3.2rem;
 
         @include respond(tablet) {
             text-align: left;
-            padding: 13.6rem 3.85rem 0;
+            padding: $pad-top-med 3.85rem 0;
             margin-bottom: 6rem;
         }
 
         @include respond(desktop) {
-            padding: 21.2rem 16.65rem 0;
+            padding: $pad-top-large 16.65rem 0;
             margin-bottom: 6.4rem;
         }
 
@@ -116,13 +116,14 @@
         }
 
         &__item {
-           
+           cursor: pointer;
         }
 
         &-link {
             cursor: pointer;
             text-decoration: none;
             padding-bottom: 0.8rem;
+            transition: all .2s;
 
             &:hover {
                 border-bottom: 3px solid rgba(255, 255, 255, 0.5);

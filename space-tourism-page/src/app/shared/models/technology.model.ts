@@ -1,8 +1,8 @@
-export interface Technology {
-    name: string,
-    images: {
-        portrait: string,
-        landscape: string
-    },
-    description: string,
+export default interface Technology {
+  name: string,
+  images: {
+    portrait: string,
+    landscape: string
+  },
+  description: string,
 }

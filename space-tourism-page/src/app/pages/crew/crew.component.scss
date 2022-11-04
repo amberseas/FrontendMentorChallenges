@@ -5,17 +5,17 @@
     min-height: 100vh;
     background-image: url(../../../assets/crew/background-crew-mobile.jpg);
     background-size: cover;
-    padding: 8.8rem 2.4rem 2.4rem;
+    padding: $pad-top-small 2.4rem 2.4rem;
     position: relative;
 
     @include respond(tablet) {
         background-image: url(../../../assets/crew/background-crew-tablet.jpg);
-        padding: 13.6rem 3.85rem 0;
+        padding: $pad-top-med 3.85rem 0;
     }
 
     @include respond(desktop) {
         background-image: url(../../../assets/crew/background-crew-desktop.jpg);
-        padding: 21.2rem 11.5vw 0;
+        padding: $pad-top-large 11.5vw 0;
     }
 
     .container {
@@ -56,8 +56,7 @@
         height: 22.3rem;
         text-align: center;
         border-bottom: 1px solid $grey;
-        // overflow: hidden;
-       
+        overflow: hidden;
 
         img {
             height: 100%;
@@ -102,9 +101,10 @@
             height: 1rem;
             border-radius: 50%;
             opacity: 0.17;
+            transition: all .2s;
 
-            @include respond(desktop) {
-              
+            &:hover {
+                opacity: 0.5;
             }
         }
 
@@ -120,7 +120,6 @@
         text-align: center;
         margin-top: 3.2rem;
         z-index: 10;
-        width: 50%;
 
         @include respond(desktop) {
            margin-top: 18.8rem;
@@ -157,6 +156,7 @@
 
             @include respond(desktop) {
                 width: 44.4rem;
+                height: 16rem;
             }
         }
     }

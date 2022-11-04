@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Planet } from 'src/app/shared/models/planet.model';
+import Planet from 'src/app/shared/models/planet.model';
 
 const data = require('../../shared/data.json').destinations;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export default class DestinationService {
   destinations: Planet[] = data;
-
-  constructor() { }
 
   getDestinations() {
     return this.destinations.slice();

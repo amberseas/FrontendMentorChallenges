@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Crew } from 'src/app/shared/models/crew.model';
+import Crew from 'src/app/shared/models/crew.model';
 
 const data = require('../../shared/data.json').crew;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CrewService {
+export default class CrewService {
   crew: Crew[] = data;
-
-  constructor() { }
 
   getCrew() {
     return this.crew.slice();
