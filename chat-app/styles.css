@@ -123,6 +123,7 @@ main {
   border-radius: 3rem;
   padding: 1rem;
   margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 @media (min-width: 75em) {
   .phone {
@@ -146,6 +147,7 @@ main {
   align-items: flex-end;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 .phone__top--white {
   width: 13rem;
@@ -248,10 +250,12 @@ main {
   border-radius: 1rem;
   line-height: 1rem;
   visibility: hidden;
+  transition: all 0.2s;
 }
 .phone__chat--grey {
-  background-color: hsla(276deg, 100%, 81%, 0.2);
+  background-color: #EDE5F4;
   border-bottom-left-radius: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 .phone__chat--grey .message {
   color: hsl(276deg, 55%, 52%);
@@ -270,10 +274,12 @@ main {
   height: 4rem;
   border-radius: 1rem;
   visibility: hidden;
+  transition: all 0.2s;
 }
 .phone__chat--white {
   background-color: hsl(0deg, 0%, 100%);
   border-bottom-right-radius: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 .phone__chat--white .message {
   color: hsl(271deg, 15%, 43%);
@@ -291,6 +297,8 @@ main {
   align-items: center;
   position: relative;
   visibility: hidden;
+  transition: all 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 .phone__chat--gradient input[type=radio] {
   display: none;
@@ -422,32 +430,43 @@ main {
           animation-fill-mode: forwards;
 }
 .animated-6 {
+  -webkit-animation: messagePop 0.5s ease-out 3.5s;
+          animation: messagePop 0.5s ease-out 3.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-7 {
   -webkit-animation: messagePop 0.5s ease-out 4s;
           animation: messagePop 0.5s ease-out 4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-.animated-7 {
-  -webkit-animation: messagePop 0.5s ease-out 4.5s;
-          animation: messagePop 0.5s ease-out 4.5s;
+.animated-8 {
+  -webkit-animation: messagePop 0.5s ease-out 5s;
+          animation: messagePop 0.5s ease-out 5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-.animated-8 {
+.animated-9 {
+  -webkit-animation: messagePop 0.5s ease-out 5.5s;
+          animation: messagePop 0.5s ease-out 5.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-10 {
   -webkit-animation: messagePop 0.5s ease-out 6s;
           animation: messagePop 0.5s ease-out 6s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-.animated-9 {
-  -webkit-animation: messagePop 0.5s ease-out 6.5s;
-          animation: messagePop 0.5s ease-out 6.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+
+.attribution {
+  font-size: 11px;
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.animated-10 {
-  -webkit-animation: messagePop 0.5s ease-out 7s;
-          animation: messagePop 0.5s ease-out 7s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
 }/*# sourceMappingURL=styles.css.map */

@@ -96,6 +96,7 @@ main {
     border-radius: 3rem;
     padding: 1rem;
     margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 
     @media (min-width: 75em) {
         margin: 0;
@@ -118,6 +119,7 @@ main {
         display: flex;
         align-items: flex-end;
        backface-visibility: hidden;
+       box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
         &--white {
             width: 13rem;
@@ -239,11 +241,13 @@ main {
             border-radius: 1rem;
             line-height: 1rem;
             visibility: hidden;
+            transition: all .2s;
         }
 
         &--grey {
-            background-color: hsla(276, 100%, 81%, 0.2);
+            background-color: $soft-pink;
             border-bottom-left-radius: .4rem;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
             .message { 
                 color: $moderate-violet;
             }
@@ -262,6 +266,7 @@ main {
                     height: 4rem;
                     border-radius: 1rem;
                     visibility: hidden;
+                    transition: all .2s;
                 }
             }
         }
@@ -269,6 +274,7 @@ main {
         &--white {
             background-color: $white;
             border-bottom-right-radius: .4rem;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 
             .message {
                 color: $desaturated-dark-violet;
@@ -291,6 +297,8 @@ main {
             position: relative;
 
             visibility: hidden;
+            transition: all .2s;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 
             input[type="radio"] {
                 display: none;
@@ -430,23 +438,35 @@ main {
         animation-fill-mode: forwards;
     }
     &-6 {
-        animation: messagePop 0.5s ease-out 4s;
+        animation: messagePop 0.5s ease-out 3.5s;
         animation-fill-mode: forwards;
     }
     &-7 {
-        animation: messagePop 0.5s ease-out 4.5s;
+        animation: messagePop 0.5s ease-out 4s;
         animation-fill-mode: forwards;
     }
     &-8 {
-        animation: messagePop 0.5s ease-out 6s;
+        animation: messagePop 0.5s ease-out 5s;
         animation-fill-mode: forwards;
     }
     &-9 {
-        animation: messagePop 0.5s ease-out 6.5s;
+        animation: messagePop 0.5s ease-out 5.5s;
         animation-fill-mode: forwards;
     }
     &-10 {
-        animation: messagePop 0.5s ease-out 7s;
+        animation: messagePop 0.5s ease-out 6s;
         animation-fill-mode: forwards;
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a {
+        color: hsl(228, 45%, 44%);
     }
 }
