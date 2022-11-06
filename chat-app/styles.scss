@@ -1,4 +1,5 @@
 @import './variables';
+@import './animations';
 
 *, *::after, *::before { 
     margin: 0;
@@ -12,9 +13,34 @@ html {
 }
 
 body {
+    min-height: 100vh;
     box-sizing: border-box;
     font-size: 1.6rem;
     position: relative;
+    padding: 6.4rem 3.6rem;
+    margin: 0 auto;
+    background-color: $light-grayish-violet;
+
+    @media (min-width: 75em) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 36rem;
+    }
+}
+
+main {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 75em) {
+        display: flex;
+        flex-direction: row;
+        gap: 12rem;
+        justify-content: center;
+    }
 }
 
 ::selection {
@@ -23,32 +49,43 @@ body {
 }
 
 .background {
-    width: 100vw;
-    height: 100vh;
-    background-color: #fafafa;
+    display: block;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: -1;
+    top: 0;
+    left: 0;
     overflow: hidden;
+    z-index: -1;
 
-    &-shape--dark {
-        height: 100rem;
-        width: 50rem;
-        border-radius: 30rem;
-        background-image: linear-gradient(240deg, $light-magenta, $light-violet);
-        position: absolute;
-        top: -49rem;
-        left: -31rem;
-    }
+    &-shape {
+        &--dark, &--light {
+            position: absolute;
+            height: 100rem;
+            width: 50rem;
+            border-radius: 30rem;
+        }
+        &--dark {
+            background-image: linear-gradient(220deg, $light-magenta, $light-magenta 40%, $light-violet);
+            top: -49rem;
+            left: -31rem;
 
-    &-shape--light {
-        height: 100rem;
-        width: 50rem;
-        border-radius: 30rem;
-        background-image: linear-gradient(150deg, $light-grayish-violet, $light-grayish-violet 24%, $light-pink 25%);
-        position: absolute;
-        bottom: -50rem;
-        right: -31rem;
-        filter: blur(1px);
+            @media (min-width: 75em){
+                top: -30rem;
+                left: -8rem;
+            }
+        }
+        &--light {
+            background-image: linear-gradient(150deg, $very-light-pink, $very-light-pink 24%, $light-pink 25%);
+            bottom: -50rem;
+            right: -31rem;
+            filter: blur(1px);
+
+            @media (min-width: 75em){
+                bottom: -32rem;
+                right: -17.5rem;
+            }
+        }
     }
 }
 
@@ -57,11 +94,12 @@ body {
     width: 25rem;
     background-color: $white;
     border-radius: 3rem;
-    position: absolute;
-    top: 6.4rem;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 1rem;
+    margin: 0 auto;
+
+    @media (min-width: 75em) {
+        margin: 0;
+    }
 
     &__background {
         width: 100%;
@@ -79,6 +117,7 @@ body {
         overflow: hidden;
         display: flex;
         align-items: flex-end;
+       backface-visibility: hidden;
 
         &--white {
             width: 13rem;
@@ -191,13 +230,15 @@ body {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding: 1rem;
+            padding: 1rem 1rem 1rem .7rem;
         }
 
         &--grey, &--white {
             max-width: 59%;
-            padding: .7rem;
+            padding: .6rem .7rem;
             border-radius: 1rem;
+            line-height: 1rem;
+            visibility: hidden;
         }
 
         &--grey {
@@ -209,7 +250,7 @@ body {
         }
 
         &--2 {
-            padding-top: .5rem;
+            padding-top: .7rem;
             align-items: flex-end;
             .image-container {
                 display: flex;
@@ -220,6 +261,7 @@ body {
                     width: 4rem;
                     height: 4rem;
                     border-radius: 1rem;
+                    visibility: hidden;
                 }
             }
         }
@@ -234,7 +276,7 @@ body {
         }
 
         &--3 {
-            padding-top: .5rem;
+            padding-top: .7rem;
         }
 
         &--gradient {
@@ -247,6 +289,8 @@ body {
             display: flex;
             align-items: center;
             position: relative;
+
+            visibility: hidden;
 
             input[type="radio"] {
                 display: none;
@@ -332,11 +376,77 @@ body {
                     height: 1rem;
                     width: .6rem;
                     background-color: $white;
-                    //-webkit-clip-path: polygon(50% 0, 100% 0, 50% 50%, 100% 100%, 50% 100%, 0% 50%);
+                    -webkit-clip-path: polygon(0 0, 15% 0, 100% 50%, 15% 100%, 0 100%, 0 85%, 60% 50%, 0 15%);
                     clip-path: polygon(0 0, 15% 0, 100% 50%, 15% 100%, 0 100%, 0 85%, 60% 50%, 0 15%);
                     border-radius: 2px;
                 }
             }
         }
+    }
+}
+
+.section-about {
+    max-width: 45rem;
+    margin-top: 6.4rem;
+    text-align: center;
+
+    @media (min-width: 75em){
+        text-align: left;
+        margin-top: 0;
+    }
+
+    &__title {
+        font-size: 3.9rem;
+        color: $very-dark-desaturated-violet;
+        margin-bottom: 3rem;
+    }
+
+    &__paragraph{
+        color: $dark-grayish-violet;
+        line-height: 2.8rem;
+    }
+}
+
+.animated {
+    
+    &-1 {
+        animation: messagePop 0.5s ease-out .5s;
+        animation-fill-mode: forwards;
+    }
+    &-2 {
+        animation: messagePop 0.5s ease-out 1s;
+        animation-fill-mode: forwards;
+    }
+    &-3 {
+        animation: messagePop 0.5s ease-out 2s;
+        animation-fill-mode: forwards;
+    }
+    &-4 {
+        animation: messagePop 0.5s ease-out 2.5s;
+        animation-fill-mode: forwards;
+    }
+    &-5 {
+        animation: messagePop 0.5s ease-out 3s;
+        animation-fill-mode: forwards;
+    }
+    &-6 {
+        animation: messagePop 0.5s ease-out 4s;
+        animation-fill-mode: forwards;
+    }
+    &-7 {
+        animation: messagePop 0.5s ease-out 4.5s;
+        animation-fill-mode: forwards;
+    }
+    &-8 {
+        animation: messagePop 0.5s ease-out 6s;
+        animation-fill-mode: forwards;
+    }
+    &-9 {
+        animation: messagePop 0.5s ease-out 6.5s;
+        animation-fill-mode: forwards;
+    }
+    &-10 {
+        animation: messagePop 0.5s ease-out 7s;
+        animation-fill-mode: forwards;
     }
 }

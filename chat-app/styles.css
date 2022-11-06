@@ -1,3 +1,27 @@
+@-webkit-keyframes messagePop {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@keyframes messagePop {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -10,9 +34,36 @@ html {
 }
 
 body {
+  min-height: 100vh;
   box-sizing: border-box;
   font-size: 1.6rem;
   position: relative;
+  padding: 6.4rem 3.6rem;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+@media (min-width: 75em) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 36rem;
+  }
+}
+
+main {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 75em) {
+  main {
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    justify-content: center;
+  }
 }
 
 ::-moz-selection {
@@ -26,31 +77,43 @@ body {
 }
 
 .background {
-  width: 100vw;
-  height: 100vh;
-  background-color: #fafafa;
+  display: block;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  z-index: -1;
+  top: 0;
+  left: 0;
   overflow: hidden;
+  z-index: -1;
 }
-.background-shape--dark {
+.background-shape--dark, .background-shape--light {
+  position: absolute;
   height: 100rem;
   width: 50rem;
   border-radius: 30rem;
-  background-image: linear-gradient(240deg, hsl(293deg, 100%, 63%), hsl(264deg, 100%, 61%));
-  position: absolute;
+}
+.background-shape--dark {
+  background-image: linear-gradient(220deg, hsl(293deg, 100%, 63%), hsl(293deg, 100%, 63%) 40%, hsl(264deg, 100%, 61%));
   top: -49rem;
   left: -31rem;
 }
+@media (min-width: 75em) {
+  .background-shape--dark {
+    top: -30rem;
+    left: -8rem;
+  }
+}
 .background-shape--light {
-  height: 100rem;
-  width: 50rem;
-  border-radius: 30rem;
-  background-image: linear-gradient(150deg, hsl(270deg, 20%, 96%), hsl(270deg, 20%, 96%) 24%, #f9f4fa 25%);
-  position: absolute;
+  background-image: linear-gradient(150deg, #F7F5FA, #F7F5FA 24%, #F9F4FA 25%);
   bottom: -50rem;
   right: -31rem;
   filter: blur(1px);
+}
+@media (min-width: 75em) {
+  .background-shape--light {
+    bottom: -32rem;
+    right: -17.5rem;
+  }
 }
 
 .phone {
@@ -58,17 +121,19 @@ body {
   width: 25rem;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 3rem;
-  position: absolute;
-  top: 6.4rem;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 1rem;
+  margin: 0 auto;
+}
+@media (min-width: 75em) {
+  .phone {
+    margin: 0;
+  }
 }
 .phone__background {
   width: 100%;
   height: 100%;
   border-radius: 2rem;
-  background-color: hsl(270deg, 20%, 96%);
+  background-color: #fafafa;
 }
 .phone__top {
   width: 100%;
@@ -79,6 +144,8 @@ body {
   overflow: hidden;
   display: flex;
   align-items: flex-end;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .phone__top--white {
   width: 13rem;
@@ -129,7 +196,7 @@ body {
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 1.7rem;
-  color: hsl(270deg, 20%, 96%);
+  color: #fafafa;
 }
 .phone__contact-info .container .state {
   font-size: 0.8rem;
@@ -173,12 +240,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0.7rem;
 }
 .phone__chat--grey, .phone__chat--white {
   max-width: 59%;
-  padding: 0.7rem;
+  padding: 0.6rem 0.7rem;
   border-radius: 1rem;
+  line-height: 1rem;
+  visibility: hidden;
 }
 .phone__chat--grey {
   background-color: hsla(276deg, 100%, 81%, 0.2);
@@ -188,7 +257,7 @@ body {
   color: hsl(276deg, 55%, 52%);
 }
 .phone__chat--2 {
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
   align-items: flex-end;
 }
 .phone__chat--2 .image-container {
@@ -200,6 +269,7 @@ body {
   width: 4rem;
   height: 4rem;
   border-radius: 1rem;
+  visibility: hidden;
 }
 .phone__chat--white {
   background-color: hsl(0deg, 0%, 100%);
@@ -209,7 +279,7 @@ body {
   color: hsl(271deg, 15%, 43%);
 }
 .phone__chat--3 {
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
 }
 .phone__chat--gradient {
   width: 16rem;
@@ -220,6 +290,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
+  visibility: hidden;
 }
 .phone__chat--gradient input[type=radio] {
   display: none;
@@ -295,6 +366,88 @@ body {
   width: 0.6rem;
   background-color: hsl(0deg, 0%, 100%);
   -webkit-clip-path: polygon(0 0, 15% 0, 100% 50%, 15% 100%, 0 100%, 0 85%, 60% 50%, 0 15%);
-          clip-path: polygon(0 0, 15% 0, 100% 50%, 15% 100%, 0 100%, 0 85%, 60% 50%, 0 15%);
+  clip-path: polygon(0 0, 15% 0, 100% 50%, 15% 100%, 0 100%, 0 85%, 60% 50%, 0 15%);
   border-radius: 2px;
+}
+
+.section-about {
+  max-width: 45rem;
+  margin-top: 6.4rem;
+  text-align: center;
+}
+@media (min-width: 75em) {
+  .section-about {
+    text-align: left;
+    margin-top: 0;
+  }
+}
+.section-about__title {
+  font-size: 3.9rem;
+  color: hsl(271deg, 36%, 24%);
+  margin-bottom: 3rem;
+}
+.section-about__paragraph {
+  color: hsl(270deg, 7%, 64%);
+  line-height: 2.8rem;
+}
+
+.animated-1 {
+  -webkit-animation: messagePop 0.5s ease-out 0.5s;
+          animation: messagePop 0.5s ease-out 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-2 {
+  -webkit-animation: messagePop 0.5s ease-out 1s;
+          animation: messagePop 0.5s ease-out 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-3 {
+  -webkit-animation: messagePop 0.5s ease-out 2s;
+          animation: messagePop 0.5s ease-out 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-4 {
+  -webkit-animation: messagePop 0.5s ease-out 2.5s;
+          animation: messagePop 0.5s ease-out 2.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-5 {
+  -webkit-animation: messagePop 0.5s ease-out 3s;
+          animation: messagePop 0.5s ease-out 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-6 {
+  -webkit-animation: messagePop 0.5s ease-out 4s;
+          animation: messagePop 0.5s ease-out 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-7 {
+  -webkit-animation: messagePop 0.5s ease-out 4.5s;
+          animation: messagePop 0.5s ease-out 4.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-8 {
+  -webkit-animation: messagePop 0.5s ease-out 6s;
+          animation: messagePop 0.5s ease-out 6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-9 {
+  -webkit-animation: messagePop 0.5s ease-out 6.5s;
+          animation: messagePop 0.5s ease-out 6.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.animated-10 {
+  -webkit-animation: messagePop 0.5s ease-out 7s;
+          animation: messagePop 0.5s ease-out 7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }/*# sourceMappingURL=styles.css.map */
