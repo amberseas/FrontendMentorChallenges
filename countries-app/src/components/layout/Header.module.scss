@@ -1,0 +1,23 @@
+@use '../../styles/colors';
+
+.header {
+  padding: 0 10rem;
+  color: colors.$white;
+  background-color: colors.$very-dark-blue-dm;
+  display: flex;
+  justify-content: space-between;
+
+  .heading {
+    padding: 2rem 0;
+  }
+
+  .button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+
+    svg {
+      padding-right: 1rem;
+    }
+  }
+}
